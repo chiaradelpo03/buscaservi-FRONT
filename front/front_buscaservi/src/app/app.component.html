@@ -1,0 +1,39 @@
+<header class="app-header">
+  <div class="logo">
+    <h1>Mi Aplicación</h1>
+  </div>
+  <nav>
+      <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Inicio</a>
+          </li>
+          <li *ngIf="!UserLoginOn" class="nav-item">
+            <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
+          </li>
+          <li *ngIf="!UserLoginOn" class="nav-item">
+            <a class="nav-link" routerLink="/register">Registrarse</a>
+          </li>
+          <li *ngIf="UserLoginOn" class="nav-item">
+            <a class="nav-link" href="#">Cerrar Sesion</a>
+          </li>
+          <li class="nav-item">
+              <button routerLink="/user-list" class="styled-button">Ir a Tabla de usuarios</button>
+          </li>
+        </ul>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="app-footer">
+  <div class="footer-content">
+    <p>&copy; 2024 Mi Aplicación. Todos los derechos reservados.</p>
+    <nav>
+      <ul>
+        <li><a routerLink="/privacy">Política de Privacidad</a></li>
+        <li><a routerLink="/terms">Términos y Condiciones</a></li>
+        <li><a routerLink="/contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
