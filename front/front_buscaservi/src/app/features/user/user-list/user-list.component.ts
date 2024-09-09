@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { HomeComponent } from "../../home/home.component";
 
 interface User {
   id: number;
@@ -17,7 +18,7 @@ interface User {
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HomeComponent],
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })

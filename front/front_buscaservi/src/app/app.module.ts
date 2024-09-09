@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
-import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserListComponent } from './features/user/user-list/user-list.component';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { HomeComponent } from './features/home/home.component';
+import { FooterComponent } from './features/shared/footer/footer.component';
+import { HeaderComponent } from './features/shared/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -13,11 +14,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    UserRegisterComponent,
+    UserListComponent,
     AppComponent,
+    ReactiveFormsModule,
+    HomeComponent,
     HeaderComponent,
-    FooterComponent,
-    ReactiveFormsModule
+    FooterComponent
   ],
   providers: [
     provideHttpClient()
