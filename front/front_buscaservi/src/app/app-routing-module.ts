@@ -4,10 +4,11 @@ import { UserListComponent } from './features/user/user-list/user-list.component
 import { LoginComponent } from './features/auth/login/login.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 
-
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user-list', component: UserListComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent }
 ];
+
+export const AppRoutingModule = RouterModule.forRoot(routes);
