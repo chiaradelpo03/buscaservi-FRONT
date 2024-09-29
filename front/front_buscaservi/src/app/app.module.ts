@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; // Importa el módulo de cliente HTTP
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'; // Agrega FormsModule
-import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
+import { AppRoutingModule } from './app-routing-module'; // Asegúrate de que este archivo contenga tus rutas
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -12,9 +12,7 @@ import { FooterComponent } from './features/shared/footer/footer.component';
 import { HeaderComponent } from './features/shared/header/header.component';
 import { LoginComponent } from './features/auth/login/login.component';
 import { RegisterComponent } from './features/auth/register/register.component';
-
-// Rutas
-import { routes } from './app-routing-module'; // Asegúrate de que este archivo contenga tus rutas
+import { ProviderListComponent } from './features/providers/provider-list/provider-list.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +22,15 @@ import { routes } from './app-routing-module'; // Asegúrate de que este archivo
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProviderListComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, // Usa HttpClientModule aquí
-    ReactiveFormsModule, // Para formularios reactivos
-    FormsModule, // Agrega FormsModule aquí para manejar formularios basados en plantillas
-    RouterModule.forRoot(routes) // Para la configuración de rutas
+    HttpClientModule, 
+    ReactiveFormsModule, 
+    FormsModule, 
+    AppRoutingModule // Asegúrate de que AppRoutingModule esté aquí
   ],
   providers: [],
   bootstrap: [AppComponent]
