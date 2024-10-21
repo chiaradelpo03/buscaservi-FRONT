@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -10,14 +10,18 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'] // Corrige 'styleUrl' a 'styleUrls'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  @Output() authChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   loginForm: FormGroup;
-  isLoggedIn: boolean = false;
   loginMessage: string = '';
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       mail: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -28,18 +32,23 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.http.post('http://localhost:3000/api/login', this.loginForm.value)
         .subscribe((response: any) => {
-          this.isLoggedIn = true;
           this.loginMessage = 'Inicio de sesión exitoso';
           console.log('Se ha iniciado sesión:', response);
-          // Aquí puedes guardar el usuario en el localStorage o en un servicio de estado
+
+          // Guardar el usuario en localStorage
           localStorage.setItem('user', JSON.stringify(response.user));
+
+          // Emitir el cambio de autenticación
+          this.authChange.emit(true);
+
           // Redirige a la página principal o a otra ruta deseada
-          this.router.navigate(['/']); // Cambia '/' por la ruta deseada
+          this.router.navigate(['/']);
         }, (error) => {
-          this.isLoggedIn = false;
           this.loginMessage = 'Error en el inicio de sesión';
           console.error('Error al iniciar sesión:', error);
         });
+    } else {
+      this.loginMessage = 'Por favor, completa el formulario correctamente.';
     }
   }
 }

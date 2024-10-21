@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <button type="submit" class="styled-button">Iniciar sesión</button>
+    <button type="submit" class="styled-button" [disabled]="loginForm.invalid">Iniciar sesión</button>
     
     <div class="login-message" *ngIf="loginMessage">{{ loginMessage }}</div>
     
