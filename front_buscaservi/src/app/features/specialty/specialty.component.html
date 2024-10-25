@@ -1,0 +1,45 @@
+<div class="specialties-container">
+    <h2>Lista de Especialidades</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let specialty of specialties">
+          <td>{{ specialty.idSpeciality }}</td>
+          <td>{{ specialty.nombreSpeciality }}</td>
+          <td>{{ specialty.descripcionSpeciality }}</td>
+          <td>
+            <button (click)="setEditSpecialty(specialty)">Editar</button>
+            <button (click)="deleteSpecialty(specialty.idSpeciality)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="add-edit-container">
+      <!-- Formulario para agregar nueva especialidad -->
+      <div *ngIf="!editSpecialty">
+        <h3>Agregar Especialidad</h3>
+        <form (ngSubmit)="addSpecialty()">
+          <input type="text" [(ngModel)]="newSpecialty.nombreSpeciality" name="nombreSpeciality" placeholder="Nombre" required />
+          <input type="text" [(ngModel)]="newSpecialty.descripcionSpeciality" name="descripcionSpeciality" placeholder="Descripción" />
+          <button type="submit">Agregar</button>
+        </form>
+      </div>
+  
+      <!-- Formulario para editar especialidad -->
+      <div *ngIf="editSpecialty">
+        <h3>Editar Especialidad</h3>
+        <form (ngSubmit)="updateSpecialty()">
+          <input type="text" [(ngModel)]="editSpecialty.nombreSpeciality" name="nombreSpeciality" placeholder="Nombre" required />
+          <input type="text" [(ngModel)]="editSpecialty.descripcionSpeciality" name="descripcionSpeciality" placeholder="Descripción" />
+          <button type="submit">Guardar Cambios</button>
+          <button type="button" (click)="cancelEdit()">
+  
