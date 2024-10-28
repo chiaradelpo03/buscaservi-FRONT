@@ -13,6 +13,7 @@ import { HeaderComponent } from './features/shared/header/header.component';
 import { LoginComponent } from './features/auth/login/login.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { ProviderListComponent } from './features/providers/provider-list/provider-list.component';
+import { ProviderRegisterComponent } from './features/auth/provider-register/provider-register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProviderListComponent } from './features/providers/provider-list/provid
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    ProviderListComponent
+    ProviderListComponent,
+    ProviderRegisterComponent
   ],
   imports: [
     BrowserModule,

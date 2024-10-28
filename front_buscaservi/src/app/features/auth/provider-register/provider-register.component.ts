@@ -6,43 +6,46 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-provider-register',
   standalone: true,
   imports: [FormsModule, CommonModule, HttpClientModule],
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'] // Cambiado a styleUrls
+  templateUrl: './provider-register.component.html',
+  styleUrls: ['./provider-register.component.css']
 })
 
-export class RegisterComponent {
+export class ProviderRegisterComponent {
   isRegistered: boolean = false;
   registrationMessage: string = '';
-  user = {
+  prestador = {
     name: '',
     mail: '',
     password: '',
     birthdate: '',
     phone: '',
-    address: ''
+    address: '',
+    service: '',
   };
 
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-    this.http.post('http://localhost:3000/api/users', this.user)
+    this.http.post('http://localhost:3000/api/prestadores', this.prestador)
       .subscribe(
         (response) => {
           this.isRegistered = true;
           this.registrationMessage = 'Registro exitoso';
-          console.log('Usuario creado:', response);
-
+          console.log('Prestador creado:', response);
+          
           // Redirigir al login después de un registro exitoso
           this.router.navigate(['/login']);
         },
         (error) => {
           this.isRegistered = true;
           this.registrationMessage = 'Error en el registro';
-          console.error('Error al crear un usuario:', error);
+          console.error('Error al crear prestador:', error);
         }
       );
   }
 }
+
+

@@ -14,6 +14,12 @@
       <li *ngIf="!UserLoginOn" class="nav-item">
         <a class="nav-link" routerLink="/register">Registrarse</a>
       </li>
+      
+      <!-- Enlace adicional "¿Buscas empleo?" -->
+      <li *ngIf="!UserLoginOn" class="nav-item">
+        <a class="nav-link" routerLink="/provider-register">¿Buscas empleo?</a>
+      </li>
+
       <!-- Mostrar enlace de cerrar sesión si está logueado -->
       <li *ngIf="UserLoginOn" class="nav-item">
         <a class="nav-link" (click)="logout()">Cerrar Sesion</a>
