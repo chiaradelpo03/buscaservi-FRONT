@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-specialty',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './specialty.component.html',
   styleUrls: ['./specialty.component.css']
 })

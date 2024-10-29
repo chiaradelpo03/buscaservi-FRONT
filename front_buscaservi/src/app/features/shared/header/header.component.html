@@ -16,7 +16,7 @@
       </li>
       
       <!-- Enlace adicional "¿Buscas empleo?" -->
-      <li *ngIf="!UserLoginOn" class="nav-item">
+      <li *ngIf="UserLoginOn" class="nav-item">
         <a class="nav-link" routerLink="/provider-register">¿Buscas empleo?</a>
       </li>
 
@@ -24,9 +24,14 @@
       <li *ngIf="UserLoginOn" class="nav-item">
         <a class="nav-link" (click)="logout()">Cerrar Sesion</a>
       </li>
+
+      <li *ngIf="UserLoginOn" class="nav-item">
+        <a class="nav-link" (click)="logout()">Cerrar Sesion</a>
+      </li>
+      <!-- 
       <li class="nav-item">
         <button routerLink="/user-list" class="styled-button">Ir a Tabla de usuarios</button>
-      </li>
+      </li>-->
     </ul>
   </nav>
 </header>
