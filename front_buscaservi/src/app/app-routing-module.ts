@@ -6,6 +6,7 @@ import { RegisterComponent } from './features/auth/register/register.component';
 import { ProviderListComponent } from './features/providers/provider-list/provider-list.component';
 import { ProviderRegisterComponent } from './features/auth/provider-register/provider-register.component';
 
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user-list', component: UserListComponent },

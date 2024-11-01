@@ -25,7 +25,8 @@ import { ProviderRegisterComponent } from './features/auth/provider-register/pro
     LoginComponent,
     RegisterComponent,
     ProviderListComponent,
-    ProviderRegisterComponent
+    ProviderRegisterComponent,
+
   ],
   imports: [
     BrowserModule,

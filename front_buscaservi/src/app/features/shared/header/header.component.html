@@ -7,6 +7,7 @@
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
       </li>
+      
       <!-- Mostrar enlaces de login o registro si no está logueado -->
       <li *ngIf="!UserLoginOn" class="nav-item">
         <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
@@ -15,7 +16,7 @@
         <a class="nav-link" routerLink="/register">Registrarse</a>
       </li>
       
-      <!-- Enlace adicional "¿Buscas empleo?" -->
+      <!-- Enlace "¿Buscas empleo?" disponible si NO está logueado -->
       <li *ngIf="!UserLoginOn" class="nav-item">
         <a class="nav-link" routerLink="/provider-register">¿Buscas empleo?</a>
       </li>
@@ -23,9 +24,6 @@
       <!-- Mostrar enlace de cerrar sesión si está logueado -->
       <li *ngIf="UserLoginOn" class="nav-item">
         <a class="nav-link" (click)="logout()">Cerrar Sesion</a>
-      </li>
-      <li class="nav-item">
-        <button routerLink="/user-list" class="styled-button">Ir a Tabla de usuarios</button>
       </li>
     </ul>
   </nav>

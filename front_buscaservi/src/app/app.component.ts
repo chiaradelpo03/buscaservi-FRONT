@@ -23,4 +23,9 @@ import { FooterComponent } from "./features/shared/footer/footer.component";
 })
 export class AppComponent {
   title = 'front_buscaservi';
+  userLoggedIn: boolean = false;
+
+  handleAuthChange(isLoggedIn: boolean) {
+    this.userLoggedIn = isLoggedIn; // Actualizar el estado de autenticación
+  }
 }
