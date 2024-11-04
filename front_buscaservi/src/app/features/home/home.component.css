@@ -1,3 +1,5 @@
+/* src/app/features/home/home.component.css */
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -112,7 +114,7 @@ nav ul li a:hover {
 
 /* Banner que ocupa toda la parte superior */
 .welcome-banner {
-  background-image: url('https://img.freepik.com/foto-gratis/enfoque-suave-mesa-madera-contra-interior-casa-borrosa_181624-43909.jpg?t=st=1727638875~exp=1727642475~hmac=56eefc73a9197496cf9855f0b529d7f1bbff6660445d17623c22a1723ba03662&w=1480');
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-lineas-dinamicas-estilo-papel_23-2149008629.jpg?t=st=1730758352~exp=1730761952~hmac=cfca188c13d7e65be4af38443b448ca221901926425dc17b43cd9bdd4e8bc361&w=1480');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -139,8 +141,6 @@ nav ul li a:hover {
   margin-bottom: 20px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
-
-
 
 .services {
   display: flex;
@@ -173,6 +173,52 @@ nav ul li a:hover {
 
 h3 {
   margin: 10px 0;
+  color: #2c3e50;
+}
+
+/* Estilos para la sección de testimonios */
+.testimonial-section {
+  background-color: #ecf0f1;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.testimonial-section h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  right: 20px;
+  height: 10px;
+  background-color: #3498db;
+  border-radius: 5px;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-card .author {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
   color: #2c3e50;
 }
 

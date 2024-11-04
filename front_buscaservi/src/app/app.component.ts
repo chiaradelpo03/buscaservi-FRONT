@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+// src/app/app.component.ts
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { HomeComponent } from "./features/home/home.component";
 import { HeaderComponent } from "./features/shared/header/header.component";
 import { FooterComponent } from "./features/shared/footer/footer.component";
 
@@ -10,12 +9,10 @@ import { FooterComponent } from "./features/shared/footer/footer.component";
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    NgIf, 
-    CommonModule, 
-    RouterModule, 
-    HomeComponent, 
-    HeaderComponent, 
+    RouterOutlet,
+    NgIf,
+    CommonModule,
+    HeaderComponent,
     FooterComponent
   ],
   templateUrl: './app.component.html',

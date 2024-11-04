@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { HomeComponent } from "../../home/home.component";
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 interface User {
   id: number;
@@ -18,7 +17,7 @@ interface User {
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, HomeComponent],
+  imports: [CommonModule, RouterModule, HttpClientModule], // Asegúrate de incluir HttpClientModule
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
@@ -36,3 +35,4 @@ export class UserListComponent implements OnInit {
       });
   }
 }
+

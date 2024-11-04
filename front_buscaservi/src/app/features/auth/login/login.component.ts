@@ -34,15 +34,19 @@ export class LoginComponent {
         .subscribe((response: any) => {
           this.loginMessage = 'Inicio de sesión exitoso';
           console.log('Se ha iniciado sesión:', response);
-
+  
           // Guardar el usuario en localStorage
           localStorage.setItem('user', JSON.stringify(response.user));
 
-          // Emitir el cambio de autenticación
-          this.authChange.emit(true);
-
-          // Redirige a la página principal o a otra ruta deseada
-          this.router.navigate(['/']);
+          // Verifica lo que estás guardando
+          console.log('Datos guardados en localStorage:', response.user);
+  
+          // Redirigir a la cuenta correspondiente según el tipo de usuario
+          if (response.user.type === 'prestador') {
+            this.router.navigate(['/provider-account']);
+          } else {
+            this.router.navigate(['/user-account']);
+          }
         }, (error) => {
           this.loginMessage = 'Error en el inicio de sesión';
           console.error('Error al iniciar sesión:', error);
@@ -51,4 +55,4 @@ export class LoginComponent {
       this.loginMessage = 'Por favor, completa el formulario correctamente.';
     }
   }
-}
+}  

@@ -1,10 +1,9 @@
-<app-home></app-home>
-<div class="user-list-container">
-    <button routerLink="/" class="back-button">Volver a Inicio</button>
-    <ul class="user-list">
-        <li *ngFor="let user of users" class="user-list-item">
-            {{ user.name }} - {{ user.mail }}
-        </li>
+<div>
+    <h2>Lista de Usuarios</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        <strong>{{ user.name }}</strong> - {{ user.mail }}
+      </li>
     </ul>
   </div>
   
