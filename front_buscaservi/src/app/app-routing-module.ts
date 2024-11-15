@@ -7,6 +7,7 @@ import { ProviderListComponent } from './features/providers/provider-list/provid
 import { ProviderRegisterComponent } from './features/auth/provider-register/provider-register.component';
 import {ProviderAccountComponent} from './features/providers/provider-account/provider-account/provider-account.component';
 import {UserAccountComponent} from './features/user/user-account/user-account/user-account.component';
+import { BudgetRequestFormComponent } from './features/budgets/budgets-list/budget-request-form.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'provider-register', component: ProviderRegisterComponent },
   { path: 'user-account', component: UserAccountComponent }, // Ruta para usuario
   { path: 'provider-account', component: ProviderAccountComponent }, // Ruta para prestador
+  { path: 'solicitar-presupuesto/:id', component: BudgetRequestFormComponent },
   { path: '**', redirectTo: '' } 
 ];
 

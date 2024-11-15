@@ -1,0 +1,19 @@
+<h2>Solicitar Presupuesto</h2>
+<p><strong>Proveedor ID:</strong> {{ providerId }}</p>
+<p><strong>Servicio ID:</strong> {{ serviceId }}</p>
+
+<form [formGroup]="presupuestoForm" (ngSubmit)="enviarFormulario()">
+  <div>
+    <label for="date">Fecha:</label>
+    <input id="date" type="date" formControlName="date" />
+  </div>
+  <div>
+    <label for="hour">Hora:</label>
+    <input id="hour" type="time" formControlName="hour" />
+  </div>
+  <div>
+    <label for="description">Descripción:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <button type="submit" [disabled]="presupuestoForm.invalid">Enviar</button>
+</form>

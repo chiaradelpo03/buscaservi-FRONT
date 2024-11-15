@@ -1,1 +1,12 @@
-<p>service-list works!</p>
+<div *ngIf="servicios.length > 0; else noServicios">
+    <h2>Lista de servicios disponibles</h2>
+    <ul>
+      <li *ngFor="let servicio of servicios">
+        {{ servicio.nombre }}
+      </li>
+    </ul>
+  </div>
+ 
+  <ng-template #noServicios>
+    <p>No hay servicios disponibles.</p>
+  </ng-template>

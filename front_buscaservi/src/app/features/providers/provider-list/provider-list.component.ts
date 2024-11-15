@@ -39,7 +39,7 @@ export class ProviderListComponent implements OnInit {
 
   contactProvider(providerId: number) {
     console.log(`Contactando proveedor con ID: ${providerId}`);
-    // Aquí puedes implementar la lógica para contactar al proveedor, como redirigir a una página de detalles.
+    this.router.navigate(['/solicitar-presupuesto', providerId]);
   }
 }
 

@@ -1,1 +1,22 @@
-<p>budgets-list works!</p>
+<div *ngIf="presupuestos.length > 0; else noPresupuestos" class="budget-list-container">
+    <h2>Lista de presupuestos</h2>
+    <ul class="budget-list">
+      <li *ngFor="let presupuesto of presupuestos" class="budget-item">
+        <div class="budget-details">
+          <p><strong>Servicio:</strong> {{ presupuesto.servicio }}</p>
+          <p><strong>Proveedor:</strong> {{ presupuesto.proveedor }}</p>
+          <p><strong>Precio estimado:</strong> {{ presupuesto.precio | currency }}</p>
+        </div>
+        <button (click)="verDetalles(presupuesto.id)" class="view-details-button">Ver detalles</button>
+      </li>
+    </ul>
+  </div>
+  
+  
+  <ng-template #noPresupuestos>
+    <p class="no-presupuestos-message">No hay presupuestos disponibles.</p>
+  </ng-template>
+  
+  
+  <!-- Mostrar el modal si hay un presupuesto seleccionado -->
+  <app-budget-detail-modal *ngIf="presupuestoSeleccionado" [presupuesto]="presupuestoSeleccionado"></app-budget-detail-modal>
