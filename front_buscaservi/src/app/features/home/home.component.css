@@ -114,7 +114,7 @@ nav ul li a:hover {
 
 /* Banner que ocupa toda la parte superior */
 .welcome-banner {
-  background-image: url('https://img.freepik.com/vector-gratis/fondo-lineas-dinamicas-estilo-papel_23-2149008629.jpg?t=st=1730758352~exp=1730761952~hmac=cfca188c13d7e65be4af38443b448ca221901926425dc17b43cd9bdd4e8bc361&w=1480');
+  background-image: url('/assets/img/banner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
