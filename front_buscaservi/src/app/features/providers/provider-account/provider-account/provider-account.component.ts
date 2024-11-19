@@ -7,7 +7,7 @@ interface Provider {
   name: string;
   mail: string;
   phone: string;
-  address: string;
+  address: String;
   service: string;
 }
 

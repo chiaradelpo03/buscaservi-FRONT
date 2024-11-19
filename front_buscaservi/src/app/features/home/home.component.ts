@@ -11,10 +11,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   featuredServices = [
-    { name: 'Plomero', description: 'Servicios de plomería profesionales.', image: 'https://aprende.com/wp-content/uploads/2022/01/instalacion-de-una-tuberia-funciones-del-plomero.jpg'},
-    { name: 'Electricista', description: 'Soluciones eléctricas a medida.', image: 'https://forjandoelfuturo.com.ar/wp-content/uploads/2021/12/electricidad.jpg' },
-    { name: 'Limpieza', description: 'Servicios de limpieza para hogares y oficinas.', image: 'https://www.grupms.es/wp-content/uploads/2018/09/servicio-de-limpieza-a-domicilio-consejos.jpg' },
-    { name: 'Pintor', description: 'Cuidado y mantenimiento de jardines.', image: 'https://pinturashipopotamo.es/wp-content/uploads/2020/01/como-elegir-un-buen-pintor.jpg' },
+    { name: 'Plomero', description: 'Servicios de plomería profesionales.', image: 'assets/img/plomero.jpg' },
+    { name: 'Electricista', description: 'Soluciones eléctricas a medida.', image: 'assets/img/electricista.jpg' },
+    { name: 'Limpieza', description: 'Servicios de limpieza para hogares y oficinas.', image: 'assets/img/limpieza.jpg' },
+    { name: 'Pintor', description: 'Cuidado y mantenimiento de jardines.', image: 'assets/img/pintor.jpg' },
   ];
 
   // Testimonios de los usuarios
