@@ -1,0 +1,79 @@
+/* Contenedor del formulario de registro */
+.register-container {
+  max-width: 500px; /* Ancho máximo del formulario */
+  margin: 40px auto; /* Centrar el formulario */
+  padding: 30px; /* Espacio interior aumentado */
+  background-color: #ffffff; /* Fondo blanco para el formulario */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Título del formulario */
+.register-title {
+  text-align: center;
+  color: #2c3e50; /* Color que combina con el diseño */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  font-size: 2rem; /* Tamaño de fuente del título */
+  font-weight: bold; /* Negrita para el título */
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 20px; /* Espacio entre los grupos */
+}
+
+/* Etiquetas */
+label {
+  font-weight: bold; /* Etiquetas en negrita */
+  color: #2c3e50; /* Color que combina con el diseño */
+  display: block; /* Hacer que la etiqueta ocupe el ancho completo */
+  margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+}
+
+/* Entrada de texto */
+.form-input {
+  width: 100%; /* Ancho completo */
+  padding: 12px; /* Espacio interior aumentado */
+  border: 1px solid #bdc3c7; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave en el borde */
+}
+
+/* Efecto en el foco del input */
+.form-input:focus {
+  border-color: #1abc9c; /* Cambio de color del borde al enfocar */
+  outline: none; /* Quitar el contorno por defecto */
+  box-shadow: 0 0 5px rgba(26, 188, 156, 0.5); /* Sombra suave al enfocar */
+}
+
+/* Mensajes de registro */
+.registration-message {
+  display: block; /* Asegúrate de que el botón sea un bloque */
+  text-align: center; /* Centrar el mensaje */
+  margin-top: 10px; /* Espacio encima del mensaje */
+  color: #e74c3c; /* Color rojo para el mensaje */
+}
+
+/* Estilos para el botón de registro */
+.styled-button {
+  background-color: hsl(118, 75%, 35%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.styled-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.styled-button:focus {
+  outline: none;
+}

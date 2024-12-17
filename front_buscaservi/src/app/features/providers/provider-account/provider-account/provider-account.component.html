@@ -1,0 +1,17 @@
+<div class="provider-account">
+    <h2>Bienvenido, {{ provider?.name || 'Cargando...' }}</h2>
+    <p><strong>Email:</strong> {{ provider?.mail || 'Cargando...' }}</p>
+    <p><strong>Teléfono:</strong> {{ provider?.phone || 'Cargando...' }}</p>
+    <p><strong>Dirección:</strong> {{ provider?.address || 'Cargando...' }}</p>
+    <p><strong>Servicio Ofrecido:</strong> {{ provider?.service || 'Cargando...' }}</p>
+  
+    <h3>Solicitudes de Servicio</h3>
+    <ul>
+      <li *ngFor="let request of serviceRequests">
+        {{ request.serviceName }} - {{ request.description }}
+        <button (click)="acceptRequest(request.id)">Aceptar</button>
+        <button (click)="rejectRequest(request.id)">Rechazar</button>
+      </li>
+    </ul>
+  </div>
+  

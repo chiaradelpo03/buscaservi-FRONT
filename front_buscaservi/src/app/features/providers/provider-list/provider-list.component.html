@@ -1,0 +1,19 @@
+<div class="provider-list-container">
+    <h2>Proveedores para {{ serviceName }}</h2>
+    <div class="provider-cards">
+      <ng-container *ngIf="providers.length > 0; else noProviders">
+        <div *ngFor="let provider of providers" class="provider-card">
+          <h3>{{ provider.name }}</h3>
+          <p>{{ provider.description }}</p>
+          <p>Servicio: {{ provider.service }}</p>
+          <p>Calificación: {{ provider.rating }}</p>
+          <button (click)="contactProvider(provider.id)">Contactar</button>
+        </div>
+      </ng-container>
+      
+      <ng-template #noProviders>
+        <p>No hay proveedores disponibles para este servicio.</p>
+      </ng-template>
+    </div>
+  </div>
+  
